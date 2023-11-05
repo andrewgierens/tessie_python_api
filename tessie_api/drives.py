@@ -1,15 +1,15 @@
-from ast import Dict
-from typing import Any
+import aiohttp
+from typing import Any, Dict
 from .tessie_wrapper import tessieRequest
 
 
-async def get_drives(self, vin: str) -> Dict[str, Any]:
-    return await tessieRequest("GET", f"/PATH/{vin}")
+async def get_drives(session: aiohttp.ClientSession, vin: str, api_key: str) -> Dict[str, Any]:
+    return await tessieRequest(session, "GET", f"/{vin}/PATH", api_key)
 
 
-async def get_driving_path(self, vin: str) -> Dict[str, Any]:
-    return await tessieRequest("GET", f"/PATH/{vin}")
+async def get_driving_path(session: aiohttp.ClientSession, vin: str, api_key: str) -> Dict[str, Any]:
+    return await tessieRequest(session, "GET", f"/{vin}/PATH", api_key)
 
 
-async def set_tag(self, vin: str) -> Dict[str, Any]:
-    return await tessieRequest("GET", f"/PATH/{vin}")
+async def set_tag(session: aiohttp.ClientSession, vin: str, api_key: str) -> Dict[str, Any]:
+    return await tessieRequest(session, "GET", f"/{vin}/PATH", api_key)

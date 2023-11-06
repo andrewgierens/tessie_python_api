@@ -1,6 +1,6 @@
 [project]
 name = "tessie_api"
-version = "0.0.6"
+version = "0.0.1"
 authors = [{ name = "Andrew Gierens", email = "apgierens@gmail.com" }]
 description = "A small python package that wraps up the Tessie API "
 readme = "README.md"

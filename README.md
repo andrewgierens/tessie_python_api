@@ -37,6 +37,12 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+## Tests
+```bash
+pip install -e .
+pytest
+```
+
 ## Contributing
 Contributions to Tessie Python API Wrapper are welcome and appreciated. If you have any suggestions or bug reports, please open an issue in the repository.
 [creating a pull request](https://help.github.com/articles/creating-a-pull-request/).

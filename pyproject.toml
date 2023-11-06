@@ -5,6 +5,7 @@ authors = [{ name = "Andrew Gierens", email = "apgierens@gmail.com" }]
 description = "A small python package that wraps up the Tessie API "
 readme = "README.md"
 requires-python = ">=3.5"
+exclude = ["*.env", "*.env.example", ".devcontainer/", ".vscode/", "tests/"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",

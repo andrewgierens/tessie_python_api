@@ -27,11 +27,12 @@ To use Tessie Python API Wrapper, you need to have Python and `aiohttp` installe
 
 ```python
 import asyncio
-from status import get_status
+from tessie_api import get_state_of_all_vehicles
 
 async def main():
-    data = await get_status("VIN")
-    print(data)
+    async with aiohttp.ClientSession() as session:  # ClientSession is created here and will be closed when exiting the block
+        data = await get_state_of_all_vehicles(session=session, api_key="TESSIE_KEY", only_active=True)
+        print(data)
 
 if __name__ == "__main__":
     asyncio.run(main())

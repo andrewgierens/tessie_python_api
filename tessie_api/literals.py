@@ -20,5 +20,6 @@ Seat = Literal[
 
 class ClimateKeeperMode(Enum):
     DISABLE = 0
+    KEEP_MODE = 1
     DOG_MODE = 2
     CAMP_MODE = 3

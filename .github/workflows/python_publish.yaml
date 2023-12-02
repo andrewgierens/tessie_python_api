@@ -46,6 +46,9 @@ jobs:
       run: bash ./scripts/build.sh
 
     - name: Run distribution script
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: bash ./scripts/dist_test.sh
 
     - name: Create a GitHub Release

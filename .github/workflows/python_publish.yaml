@@ -37,6 +37,11 @@ jobs:
       run: |
         pip install build twine
 
+    - name: Set execute permission for build.sh and dist_test.sh
+      run: |
+        chmod +x ./scripts/build.sh
+        chmod +x ./scripts/dist_test.sh
+
     - name: Run build script
       run: ./scripts/build.sh
 

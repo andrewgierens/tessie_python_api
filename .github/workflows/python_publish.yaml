@@ -39,13 +39,10 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: bash ./scripts/dist.sh
 
-    - name: Upload files to a GitHub release
-      uses: svenstaro/upload-release-action@2.7.0
+    - name: Release
+      uses: softprops/action-gh-release@v1
       with:
-        file: ./dist/tessie_api-${{ github.ref_name }}.tar.gz
-        tag: ${{ github.ref_name }}
-        overwrite: true
-        release_name: Release of ${{ github.ref_name }}
+        files: ./dist/tessie_api-${{ github.ref_name }}.tar.gz
 
     - name: Create a GitHub Release
       uses: actions/create-release@v1

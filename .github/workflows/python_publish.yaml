@@ -37,10 +37,10 @@ jobs:
       run: |
         pip install build twine
 
-    - name: Set execute permission for build.sh and dist_test.sh
+    - name: Set execute permission for build.sh and dist.sh
       run: |
         chmod +x ./scripts/build.sh
-        chmod +x ./scripts/dist_test.sh
+        chmod +x ./scripts/dist.sh
 
     - name: Run build script
       run: bash ./scripts/build.sh
@@ -49,7 +49,7 @@ jobs:
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-      run: bash ./scripts/dist_test.sh
+      run: bash ./scripts/dist.sh
 
     - name: Create a GitHub Release
       uses: actions/create-release@v1

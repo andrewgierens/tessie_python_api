@@ -2,8 +2,6 @@ name: Build and Publish
 
 on:
   push:
-    branches:
-      - actions
     tags:
       - '*'
 
@@ -14,24 +12,14 @@ jobs:
       image: python:3.11-buster
 
     steps:
-    - name: Determine version from Git tag or set default
-      id: versioning
-      run: |
-        if [[ $GITHUB_REF == refs/tags/* ]]; then
-          VERSION=${GITHUB_REF#refs/tags/}
-        else
-          VERSION="0.0.4"
-        fi
-        echo "VERSION=$VERSION" >> $GITHUB_ENV
-
     - name: Check out code
       uses: actions/checkout@v2
 
     - name: Extract tag version and update pyproject.toml
       run: |
         TAG_VERSION=${GITHUB_REF#refs/tags/}
-        echo "Extracted version: ${{ env.VERSION }}"
-        sed -i "s/^version = .*/version = '${{ env.VERSION }}'/" pyproject.toml
+        echo "Extracted version: ${{ github.ref }}"
+        sed -i "s/^version = .*/version = '${{ github.ref }}'/" pyproject.toml
 
     - name: Install dependencies
       run: |
@@ -54,18 +42,18 @@ jobs:
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.7.0
       with:
-        file: ./dist/tessie_api-${{ env.VERSION }}.tar.gz
-        tag: ${{ env.VERSION }}
+        file: ./dist/tessie_api-${{ github.ref }}.tar.gz
+        tag: ${{ github.ref }}
         overwrite: true
-        release_name: Release of ${{ env.VERSION }}
+        release_name: Release of ${{ github.ref }}
 
     - name: Create a GitHub Release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ env.VERSION }}
-        release_name: Release ${{ env.VERSION }}
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
         draft: false
         prerelease: false
 
@@ -75,5 +63,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/tessie_api-${{ env.VERSION }}.tar.gz
+        asset_path: ./dist/tessie_api-${{ github.ref }}.tar.gz
         asset_content_type: application/gzip

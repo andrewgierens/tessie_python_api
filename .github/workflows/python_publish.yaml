@@ -31,7 +31,7 @@ jobs:
       run: |
         TAG_VERSION=${GITHUB_REF#refs/tags/}
         echo "Extracted version: ${{ env.VERSION }}"
-        sed -i "s/^version = .*/version = '\"${{ env.VERSION }}\"'/" pyproject.toml
+        sed -i "s/^version = .*/version = '${{ env.VERSION }}'/" pyproject.toml
 
     - name: Install dependencies
       run: |

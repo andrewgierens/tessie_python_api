@@ -18,8 +18,8 @@ jobs:
     - name: Extract tag version and update pyproject.toml
       run: |
         TAG_VERSION=${GITHUB_REF#refs/tags/}
-        echo "Extracted version: ${{ github.ref }}"
-        sed -i "s/^version = .*/version = '${{ github.ref }}'/" pyproject.toml
+        echo "Extracted version: ${{ github.ref_name }}"
+        sed -i "s/^version = .*/version = '${{ github.ref_name }}'/" pyproject.toml
 
     - name: Install dependencies
       run: |
@@ -42,18 +42,18 @@ jobs:
     - name: Upload files to a GitHub release
       uses: svenstaro/upload-release-action@2.7.0
       with:
-        file: ./dist/tessie_api-${{ github.ref }}.tar.gz
-        tag: ${{ github.ref }}
+        file: ./dist/tessie_api-${{ github.ref_name }}.tar.gz
+        tag: ${{ github.ref_name }}
         overwrite: true
-        release_name: Release of ${{ github.ref }}
+        release_name: Release of ${{ github.ref_name }}
 
     - name: Create a GitHub Release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ github.ref_name }}
+        release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
 
@@ -63,5 +63,5 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/tessie_api-${{ github.ref }}.tar.gz
+        asset_path: ./dist/tessie_api-${{ github.ref_name }}.tar.gz
         asset_content_type: application/gzip

@@ -43,10 +43,10 @@ jobs:
         chmod +x ./scripts/dist_test.sh
 
     - name: Run build script
-      run: ./scripts/build.sh
+      run: bash ./scripts/build.sh
 
     - name: Run distribution script
-      run: ./scripts/dist_test.sh
+      run: bash ./scripts/dist_test.sh
 
     - name: Create a GitHub Release
       uses: actions/create-release@v1

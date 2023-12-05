@@ -3,7 +3,6 @@ from typing import Any, Dict
 from .tessie_wrapper import tessieRequest
 
 
-# Sample comment
 async def trigger_homelink(
     session: aiohttp.ClientSession,
     vin: str,

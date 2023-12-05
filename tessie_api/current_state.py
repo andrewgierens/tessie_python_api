@@ -23,7 +23,7 @@ async def get_state_of_all_vehicles(
     return await tessieRequest(
         session,
         "GET",
-        f"/vehicles",
+        "/vehicles",
         api_key,
         params={"only_active": str(only_active).lower()},
     )

@@ -17,7 +17,7 @@ async def get_idles(
     distance_format: DistanceFormat = "km",
     format: Format = "json",
     timezone: str = "UTC",
-    exclude_origin: str = False,
+    exclude_origin: bool = False,
 ) -> Dict[str, Any]:
     return await tessieRequest(
         session,

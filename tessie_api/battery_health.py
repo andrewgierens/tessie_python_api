@@ -9,8 +9,8 @@ async def get_battery_health(
     session: aiohttp.ClientSession,
     vin: str,
     api_key: str,
-    from_time: int = None,
-    to_time: int = None,
+    from_time: int,
+    to_time: int,
     distance_format: DistanceFormat = "km",
 ) -> Dict[str, Any]:
     params = {

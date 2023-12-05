@@ -28,7 +28,7 @@ async def enable_speed_limit(
     session: aiohttp.ClientSession,
     vin: str,
     api_key: str,
-    pin: string,
+    pin: str,
     retry_duration: int = 40,
     wait_for_completion: bool = True,
 ) -> Dict[str, Any]:

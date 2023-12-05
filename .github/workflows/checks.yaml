@@ -18,7 +18,11 @@ jobs:
     - name: Install dependencies
       run: |
         pip install flake8 mypy black
+    - name: Set execute permission for build.sh and dist.sh
+      run: |
+        chmod +x ./scripts/lint.sh
+        chmod +x ./scripts/type_check.sh
     - name: Run Linting
-      run: ./lint.sh
+      run: ./scripts/lint.sh
     - name: Run Type Checks
-      run: ./type_check.sh
+      run: ./scripts/type_check.sh

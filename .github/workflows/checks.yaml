@@ -17,7 +17,8 @@ jobs:
         python-version: '3.x'
     - name: Install dependencies
       run: |
-        pip install flake8 mypy black
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
     - name: Set execute permission for build.sh and dist.sh
       run: |
         chmod +x ./scripts/lint.sh

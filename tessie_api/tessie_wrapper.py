@@ -15,5 +15,5 @@ async def tessieRequest(
         "Content-Type": "application/json",
     }
     async with session.request(method, url, headers=headers, params=params) as response:
-        response.raise_for_status()  # Will raise aiohttp.ClientResponseError on 4xx or 5xx
+        response.raise_for_status()
         return await response.json()

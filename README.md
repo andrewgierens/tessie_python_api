@@ -53,9 +53,6 @@ Contributions to Tessie Python API Wrapper are welcome and appreciated. If you h
 ## License
 This project is licensed under the GNU GPLv3 License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Contact
-If you have any questions or want to reach out, you can contact me at apgierens@gmail.com
-
 ## Contributors
 <!-- readme: contributors -start -->
 <table>

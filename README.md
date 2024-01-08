@@ -1,4 +1,6 @@
 # Tessie Python API Wrapper
+![Total downloads for the project](https://static.pepy.tech/badge/tessie-api) ![Last 30 days downloads for the project](https://static.pepy.tech/badge/tessie-api/month)
+
 
 ## Description
 Tessie Python API Wrapper is a simple wrapper designed to interact with various APIs exposed by Tessie.

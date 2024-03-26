@@ -1,7 +1,6 @@
 import aiohttp
 from typing import Any, Dict
 
-from .literals import DistanceFormat
 from .tessie_wrapper import tessieRequest
 
 

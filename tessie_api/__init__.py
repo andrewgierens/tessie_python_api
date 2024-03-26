@@ -1,4 +1,5 @@
 from .battery_health import get_battery_health
+from .battery import get_battery
 from .boombox import boombox
 from .charges import get_charges
 from .charges import set_charge_cost

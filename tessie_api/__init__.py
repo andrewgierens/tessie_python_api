@@ -13,6 +13,7 @@ from .climate import start_climate_preconditioning
 from .climate import stop_climate
 from .climate import set_temperature
 from .climate import set_seat_heat
+from .climate import set_seat_cool
 from .climate import start_defrost
 from .climate import stop_defrost
 from .climate import start_steering_wheel_heater

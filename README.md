@@ -79,6 +79,13 @@ This project is licensed under the GNU GPLv3 License - see the [LICENSE.md](LICE
             <br />
             <sub><b>KrzysztofHajdamowicz</b></sub>
         </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/atinsley">
+            <img src="https://avatars.githubusercontent.com/u/6677642?v=4" width="100;" alt="atinsley"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
     </td></tr>
 </table>
 <!-- readme: contributors -end -->

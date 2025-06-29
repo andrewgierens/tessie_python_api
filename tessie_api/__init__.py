@@ -20,6 +20,8 @@ from .climate import start_steering_wheel_heater
 from .climate import stop_steering_wheel_heater
 from .climate import set_bioweapon_defense_mode
 from .climate import set_climate_keeper_mode
+from .climate import start_cabin_overheat_protection
+from .climate import stop_cabin_overheat_protection
 from .current_state import get_state
 from .current_state import get_state_of_all_vehicles
 from .current_state import get_location

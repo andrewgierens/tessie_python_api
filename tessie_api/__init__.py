@@ -42,6 +42,8 @@ from .horn import honk
 from .idles import get_idles
 from .keyless_driving import enable_keyless_driving
 from .lights import flash_lights
+from .low_power_mode import enable_low_power_mode
+from .low_power_mode import disable_low_power_mode
 from .scheduling import set_scheduled_charging
 from .scheduling import set_scheduled_departure
 from .sentry_mode import enable_sentry_mode

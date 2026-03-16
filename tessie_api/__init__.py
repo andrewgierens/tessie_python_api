@@ -1,3 +1,5 @@
+from .accessory_power import enable_keep_accessory_power_mode
+from .accessory_power import disable_keep_accessory_power_mode
 from .battery_health import get_battery_health
 from .battery import get_battery
 from .boombox import boombox

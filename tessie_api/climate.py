@@ -230,6 +230,7 @@ async def start_cabin_overheat_protection(
     session: aiohttp.ClientSession,
     vin: str,
     api_key: str,
+    fan_only: bool = False,
     retry_duration: int = 40,
     wait_for_completion: bool = True,
 ) -> Dict[str, Any]:
@@ -240,6 +241,7 @@ async def start_cabin_overheat_protection(
         api_key,
         params={
             "on": "true",
+            "fan_only": str(fan_only).lower(),
             "retry_duration": retry_duration,
             "wait_for_completion": str(wait_for_completion).lower(),
         },
@@ -260,6 +262,7 @@ async def stop_cabin_overheat_protection(
         api_key,
         params={
             "on": "false",
+            "fan_only": "false",
             "retry_duration": retry_duration,
             "wait_for_completion": str(wait_for_completion).lower(),
         },

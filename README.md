@@ -74,6 +74,13 @@ This project is licensed under the GNU GPLv3 License - see the [LICENSE.md](LICE
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/DarlCat">
+            <img src="https://avatars.githubusercontent.com/u/4566791?v=4" width="100;" alt="DarlCat"/>
+            <br />
+            <sub><b>Darl</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/KrzysztofHajdamowicz">
             <img src="https://avatars.githubusercontent.com/u/24268470?v=4" width="100;" alt="KrzysztofHajdamowicz"/>
             <br />
